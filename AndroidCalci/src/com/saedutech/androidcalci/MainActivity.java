@@ -53,7 +53,10 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
-				
+				display = 0;
+				stash = 0;
+				operator = ' ';
+				updateDisplay();
 			}
 		});
         
@@ -63,7 +66,23 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				
+				switch (operator) {
+				case '+':
+					display = stash + display;
+					stash = 0;
+					operator = ' ';
+					updateDisplay();
+					break;
+					
+				case '-':
+					display = stash - display;
+					stash = 0;
+					operator = ' ';
+					updateDisplay();
+
+				default:
+					break;
+				}
 			}
 		});
     
